@@ -2,7 +2,7 @@
 import "./css/App.css";
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home"
-import {Routes, Route} from "react-router-dom"
+import {Navigate, Routes, Route} from "react-router-dom"
 import NavBar from "./components/Navbar";
 import { MovieProvider } from "./contexts/MovieContext";
 //import MovieCard from './components/MovieCard'
@@ -33,6 +33,7 @@ function Text({display}){ //props in the curly braces to pass values to the func
   <Routes>
     <Route path="/" element={<Home />}/>
     <Route path="/favorites" element={<Favorites/>}/>
+    <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 </main>
  </MovieProvider>
